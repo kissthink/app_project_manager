@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y150"
+    android:background="?attr/itemColor"
+    android:minHeight="@dimen/y150">
+
+    <ImageView
+        android:id="@+id/id_treenode_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/x5"
+        android:src="@mipmap/arrow_collapse_night" />
+
+    <!--保证整块区域可点，使用户好点击-->
+    <LinearLayout
+        android:id="@+id/id_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:paddingBottom="8dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="8dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/login_checkbox_selector"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/id_treenode_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/id_confirm"
+        android:layout_toRightOf="@id/id_treenode_icon"
+        android:textColor="?attr/commonColor"
+        android:textSize="15sp"
+        tools:text="公司名" />
+
+</RelativeLayout>

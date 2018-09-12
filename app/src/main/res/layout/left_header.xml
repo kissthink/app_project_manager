@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/left_header"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y300"
+    android:background="?attr/bgColor">
+
+    <ImageView
+        android:id="@+id/head_image"
+        android:layout_width="@dimen/x230"
+        android:layout_height="@dimen/y230"
+        android:padding="@dimen/x20"
+        android:src="@mipmap/login_head"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/more_image"
+        app:layout_constraintStart_toEndOf="@+id/head_image"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/y10"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:textColor="?attr/userNameColor"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="小白" />
+
+        <TextView
+            android:id="@+id/company_name"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/y10"
+            android:layout_weight="1"
+            android:textColor="?attr/commonColor"
+            android:textSize="16sp"
+            tools:text="江苏星云网格有限公司" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/more_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/x20"
+        android:background="@drawable/shape_up_arrow_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <CheckBox
+            android:id="@+id/check_company"
+            android:layout_width="@dimen/x60"
+            android:layout_height="@dimen/x60"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_left_arrow"
+            android:button="@null"
+            android:checked="false"
+            android:padding="@dimen/x20" />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

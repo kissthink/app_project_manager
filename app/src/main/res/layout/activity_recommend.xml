@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_409dfe"
+    android:orientation="vertical">
+
+    <com.xywg.pm.projectmanager.view.MyHeadView
+        android:id="@+id/head_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x144"
+        app:left_icon="@mipmap/ic_back"
+        app:middle_text="推荐给好友" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/x60"
+        android:layout_marginStart="@dimen/x60"
+        android:layout_marginTop="@dimen/x20"
+        android:background="@drawable/shape_bg_ffffff_coner_20"
+        android:orientation="vertical">
+
+        <com.example.common.widget.view.SquareImageView
+            android:id="@+id/iv_ercode"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/x100" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/x100"
+            android:text="推荐给"
+            android:textColor="@color/color_969696"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/x100"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_qq"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:src="@drawable/ssdk_oks_classic_qq" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/x20"
+                    android:text="QQ好友"
+                    android:textColor="@color/color_000000"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_wechat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/x100"
+                    android:layout_height="@dimen/x100"
+                    android:src="@drawable/ssdk_oks_classic_wechat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/x20"
+                    android:text="微信"
+                    android:textColor="@color/color_000000"
+                    android:textSize="13sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffff"
+    tools:context=".activity.LoginActivity">
+
+    <ImageView
+        android:id="@+id/iv_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/login_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/x45"
+        android:text="注册"
+        android:textColor="@color/color_ffffff"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/take_photo"
+        android:layout_width="@dimen/x80"
+        android:layout_height="@dimen/x80"
+        android:layout_marginEnd="@dimen/x45"
+        android:layout_marginTop="@dimen/x45"
+        android:src="@mipmap/login_camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x45"
+        android:text="用户名"
+        android:textColor="@color/color_000000"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_bg" />
+
+    <com.xywg.pm.projectmanager.view.LineEditText
+        android:id="@+id/et_name"
+        style="?android:attr/textViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/x45"
+        android:layout_marginStart="@dimen/x45"
+        android:background="@color/color_transparent"
+        android:hint="请输入您的用户名"
+        android:maxLength="15"
+        android:paddingBottom="@dimen/x30"
+        android:paddingTop="@dimen/x30"
+        android:singleLine="true"
+        android:textColor="@color/color_000000"
+        android:textColorHint="@color/color_cccccc"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/x45"
+        android:text="密码"
+        android:textColor="@color/color_000000"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_name" />
+
+    <com.xywg.pm.projectmanager.view.CodeLineEditText
+        android:id="@+id/et_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="@dimen/x45"
+        android:layout_marginStart="@dimen/x45"
+        android:background="@color/color_transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pass" />
+
+    <TextView
+        android:id="@+id/tv_forget_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/x45"
+        android:layout_marginTop="@dimen/x20"
+        android:gravity="center_vertical|end"
+        android:text="忘记密码"
+        android:textColor="@color/color_000000"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_pass" />
+
+    <LinearLayout
+        android:id="@+id/rt_login"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/x130"
+        android:background="@drawable/shape_login_bg"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_pass"
+        app:layout_constraintWidth_percent="0.7">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录"
+            android:textColor="@color/color_ffffff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
+

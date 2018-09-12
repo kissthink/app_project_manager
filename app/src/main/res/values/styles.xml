@@ -1,0 +1,41 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="NightTheme" parent="AppTheme">
+        <item name="userNameColor">@color/color_ffffff</item>
+        <item name="commonColor">@color/color_68737f</item>
+        <item name="bgColor">@color/color_1c232c</item>
+        <item name="itemColor">@color/color_181f29</item>
+        <item name="settingImage">@mipmap/settings_night</item>
+        <item name="themeImage">@mipmap/theme_night</item>
+    </style>
+
+    <style name="DayTheme" parent="AppTheme">
+        <item name="userNameColor">@color/color_000000</item>
+        <item name="commonColor">@color/color_424242</item>
+        <item name="bgColor">@color/color_ffffff</item>
+        <item name="itemColor">@color/color_ffffff</item>
+        <item name="settingImage">@mipmap/settings_day</item>
+        <item name="themeImage">@mipmap/theme_day</item>
+
+    </style>
+
+    <!--启动页面样式-->
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--取消标题栏ActionBar-->
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">true</item>
+
+        <!--取消状态栏 电量  WIFI (完全看不见)-->
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">true</item>
+
+        <!--启动界面背景-->
+        <item name="android:windowBackground">@mipmap/launch_pic</item>
+
+    </style>
+
+
+</resources>

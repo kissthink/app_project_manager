@@ -1,0 +1,40 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.common">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.access_wifi_state" />
+    <uses-permission android:name="android.permission.access_network_state" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.Manifest.permission.READ_PHONE_STATE" />
+
+    <!--NFC权限-->
+    <uses-permission android:name="android.permission.NFC" />
+    <!--震动-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!-- 要求当前设备必须要有NFC芯片 -->
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
+
+    <application android:theme="@style/AppTheme">
+
+        <activity android:name=".widget.splash.GuideActivity" />
+
+        <activity android:name=".widget.album.ClipImageActivity" />
+
+        <activity android:name=".activity.ImagePreviewActivity" />
+
+    </application>
+
+</manifest>

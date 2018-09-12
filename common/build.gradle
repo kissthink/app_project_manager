@@ -1,0 +1,118 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        multiDexEnabled true //65535
+        manifestPlaceholders = [UMENG_CHANNEL_VALUE: "default"]//3.0 resid bug
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //arouter
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+    }
+
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
+
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            '/src/main/res/layout/activity',
+                            '/src/main/res/layout/fragment',
+                            '/src/main/res/layout/item',
+                            '/src/main/res/layout/view',
+                            '/src/main/res/layout/other',
+                            '/src/main/res/layout',
+                            '/src/main/res'
+                    ]
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://maven.google.com'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    //test
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //android support
+    api "com.android.support:appcompat-v7:$rootProject.ext.supportLibVersion"
+    api "com.android.support:support-v4:$rootProject.ext.supportLibVersion"
+    api "com.android.support:design:$rootProject.ext.supportLibVersion"
+    api "com.android.support:recyclerview-v7:$rootProject.ext.supportLibVersion"
+    api "com.android.support:cardview-v7:$rootProject.ext.supportLibVersion"
+    api 'com.android.support.constraint:constraint-layout:1.1.1'
+
+    // third
+    // rxjava and retrofit and okhttp3
+    api 'io.reactivex.rxjava2:rxjava:2.1.7'
+    api 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    api 'com.squareup.retrofit2:retrofit:2.3.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    api 'com.squareup.retrofit2:converter-gson:2.3.0'
+    api 'com.squareup.retrofit2:converter-scalars:2.3.0'
+    api 'com.squareup.okhttp3:okhttp:3.10.0'
+    api 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+    // glide
+    api('com.github.bumptech.glide:glide:4.7.1') {
+        exclude group: "com.android.support"
+    }
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+    // permissions
+    api 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    // multidex
+    api 'com.android.support:multidex:1.0.3'
+    // arouter
+    api 'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    // recycle adapter
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    // eventsbus
+    api 'org.greenrobot:eventbus:3.1.1'
+    // zxing
+    api files('libs/core-3.2.1.jar')
+    // matisse
+    api 'com.zhihu.android:matisse:0.4.3'
+}
+
+

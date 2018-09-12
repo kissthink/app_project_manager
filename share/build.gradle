@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.mob.sdk'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+//    compileOptions {
+//        sourceCompatibility JavaVersion.VERSION_1_8
+//        targetCompatibility JavaVersion.VERSION_1_8
+//    }
+
+    // 在MobSDK的扩展中注册ShareSDK的相关信息
+    MobSDK {
+        appKey "271ec855399d2"
+        appSecret "de890d56ca10c02edea6a4d559b88775"
+
+        ShareSDK {
+            devInfo {
+                SinaWeibo {
+                    appKey "568898243"
+                    appSecret "38a4f8204cc784f81f9f0daaf31e02e3"
+                    callbackUri "http://www.sharesdk.cn"
+                    shareByAppClient true
+                    enable true
+                }
+                Wechat {
+                    appId "wx6927efc99d8f4d4e"
+                    appSecret "3513eb3443462b600b29d9c326f441c3"
+                    enable true
+                }
+                WechatMoments {
+                    appId "wx6927efc99d8f4d4e"
+                    appSecret "3513eb3443462b600b29d9c326f441c3"
+                    enable true
+                }
+                QQ {
+                    appId "101497640"
+                    appKey "328743b774b89efc87995bd6b1d9c792"
+                    bypassApproval false
+                    shareByAppClient true
+                    enable true
+                }
+                QZone {
+                    appId "101497640"
+                    appKey "328743b774b89efc87995bd6b1d9c792"
+                    bypassApproval true
+                    enable true
+                }
+            }
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}
+

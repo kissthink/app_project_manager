@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_cccccc"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.xywg.pm.projectmanager.view.PaletteView
+            android:id="@+id/edit_photo_palette"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/y120"
+            android:background="@color/color_ffffff"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/edit_photo_confirm"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/x10"
+                android:layout_weight="1"
+                android:background="@drawable/save_btn_background"
+                android:text="确定"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/edit_photo_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/x10"
+                android:layout_weight="1"
+                android:background="@drawable/submit_btn_black_background"
+                android:text="清除"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

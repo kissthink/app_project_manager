@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_ffffff">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <wendu.dsbridge.DWebView
+            android:id="@+id/d_web_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <RelativeLayout
+            android:id="@+id/review_voice_rl"
+            android:layout_width="@dimen/x300"
+            android:layout_height="@dimen/x300"
+            android:layout_gravity="center"
+            android:background="@drawable/voice_background"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/review_voice_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:padding="@dimen/x80"
+                android:src="@drawable/voice_animation" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/color_ffffff"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/error" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/x20"
+                android:text="网络异常，请检查您的网络设置"
+                android:textColor="@color/color_424242"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="?attr/bgColor"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical">
+
+        <include layout="@layout/left_header" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/bgColor">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.example.common.widget.view.CustomListView
+                        android:id="@+id/lv_choose_operation_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:divider="@null">
+
+                    </com.example.common.widget.view.CustomListView>
+
+                    <LinearLayout
+                        android:id="@+id/ll_setting"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/y150"
+                        android:background="?attr/itemColor"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/x20">
+
+                        <ImageView
+                            android:layout_width="@dimen/x80"
+                            android:layout_height="@dimen/y80"
+                            android:src="?attr/settingImage" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/x50"
+                            android:text="设置"
+                            android:textColor="?attr/commonColor"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/y150"
+                        android:background="?attr/itemColor"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingStart="@dimen/x20">
+
+                        <ImageView
+                            android:layout_width="@dimen/x80"
+                            android:layout_height="@dimen/y80"
+                            android:src="?attr/themeImage" />
+
+                        <Switch
+                            android:id="@+id/theme_switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/x50" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/ll_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/bgColor">
+
+                <ListView
+                    android:id="@+id/lv_choose_project_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@null" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.DrawerLayout>
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_index"
+        android:title="我的首页" />
+    <item
+        android:id="@+id/menu_photo"
+        android:title="我的照片" />
+    <item
+        android:id="@+id/menu_fri"
+        android:title="我的朋友" />
+    <item
+        android:id="@+id/menu_kong"
+        android:title="我的空间" />
+    <item
+        android:id="@+id/menu_setting"
+        android:title="我的设置" />
+
+</menu>
